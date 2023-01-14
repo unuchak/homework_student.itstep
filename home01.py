@@ -1,0 +1,11 @@
+
+age = int(input("Вазраст пользователя:\n"))
+month = (age*12)
+weeks = (age*54)
+days = (age*356)
+hour = (age*8760)
+minute = (age*525600)
+second = (age*31536000)
+millisecond = (age*31536000000)
+print(f""" Ваш возраст:{age}\n В месяцах:{month}\n В неделях:{weeks}\n В днях:{days}\n В часах:{hour}\n В минутах:{minute}\n В секундах:{second}\n В милисекундах:{millisecond}\n """)
+# print(month, weeks, hour,  minute, second, millisecond, sep="\n")
