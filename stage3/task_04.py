@@ -1,11 +1,13 @@
-# Version 1.0
-# Author: marina.unuchak
-# Date: 31.01.2023
-# 4) Дано натуральное пятизначное число. Найдите сумму его цифр.
+"""
+Version 1.0
+Author: marina.unuchak
+Date: 31.01.2023
+4) Дано натуральное пятизначное число. Найдите сумму его цифр.
+"""
 
 number = int(input("Input a number: "))
 if number < 10000 or number > 100000:
-    print("ERROR")
+    print("Error, number should be 5-digit")
     exit()
 
 temp = number
