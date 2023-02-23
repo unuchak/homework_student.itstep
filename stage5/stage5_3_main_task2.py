@@ -7,7 +7,7 @@
 
 
 def convert_day_of_year__to__day_of_week(day):
-    # первый день в текущем году воскресенье
+    # Sunday first day of the year
     first_day_number_in_year = 6
 
     day_number_in_year = first_day_number_in_year + day - 1
@@ -18,26 +18,26 @@ def convert_day_of_year__to__day_of_week(day):
 
 def convert_day_of_week_to_text(day_number):
     if day_number == 0:
-        return "понедельник"
+        return "Monday"
     if day_number == 1:
-        return "вторник"
+        return "Tuesday"
     if day_number == 2:
-        return "среда"
+        return "Wednesday"
     if day_number == 3:
-        return "четверг"
+        return "Thursday"
     if day_number == 4:
-        return "пятница"
+        return "Friday"
     if day_number == 5:
-        return "суббота"
+        return "Saturday"
     if day_number == 6:
-        return "воскресенье"
+        return "Sunday"
     return "Error"
 
 
 def main():
-    day = int(input("Введите день в диапазоне 1-365: "))
+    day = int(input("Enter a day in the range 1-365: "))
     if not (1 <= day <= 365):
-        exit("Error, введите день в диапазоне 1-365")
+        exit("Error, enter a day in the range 1-365")
 
     day_of_week = convert_day_of_year__to__day_of_week(day)
     day_of_week_text = convert_day_of_week_to_text(day_of_week)

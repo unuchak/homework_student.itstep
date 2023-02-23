@@ -20,7 +20,7 @@ def is_equal(number):
 
 
 def main():
-    number = int(input("Введите 4x-значное число: "))
+    number = int(input("Input a 4x digit number: "))
     if not 100 <= number <= 9999:
         exit("Error, should me 100 <= number <= 9999")
 
