@@ -11,13 +11,30 @@ Date: 14.02.2023
 """
 
 
+def get_digits_of_number(num):
+    digits = []
+
+    while num > 0:
+        num, digit = divmod(num, 10)
+        digits.append(digit)
+
+    return digits
+
+
 def is_number_palindrome(num):
-    digits = list(str(num))
+    digits = get_digits_of_number(num)
+
     is_palindrome = True
-    for i in range(len(digits) // 2):
-        if digits[i] != digits[-i - 1]:
+    digits_len = len(digits)
+
+    for i in range(digits_len // 2):
+        left_digit = digits[i]
+        right_digit = digits[digits_len - i - 1]
+
+        if left_digit != right_digit:
             is_palindrome = False
             break
+
     return is_palindrome
 
 
@@ -30,16 +47,12 @@ def main():
 
 
 def build_msg(is_palindrome):
-    if is_palindrome:
-        msg = "The number is palindrome."
-    else:
-        msg = "The number is not palindrome"
-    return msg
+    return "The number is palindrome." if is_palindrome else "The number is not palindrome"
 
 
-def test_1_1235321():
-    is_palindrome = is_number_palindrome(1235321)
-    return is_palindrome
+def test_1_123456():
+    is_palindrome = is_number_palindrome(123456)
+    return not is_palindrome
 
 
 def test_2_112211():
@@ -59,8 +72,8 @@ def test_4_1221():
 
 def test_suite():
     msg = f"""
-    test_1_1235321 = {test_1_1235321()}
-    test_2_112211 =  {test_2_112211()}
+    test_1_123456 = {test_1_123456()}
+    test_2_112211 = {test_2_112211()}
     test_3_7 =  {test_3_7()}
     test_4_1221 =  {test_4_1221()}
     """
